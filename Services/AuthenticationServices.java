@@ -9,17 +9,29 @@ public class AuthenticationServices
 	
 	public AuthenticationServices()
 	{
+		System.out.println("Service Layer Call");
 		_registration = new Registration();
 	}
 	
 	public boolean Login(String username, String password)
 	{
-		if(username == "prova" && password == "12345")
+		System.out.println("Login Call");
+		User user = _registration.GetUserByEmployeeID(username);
+		
+		System.out.println(user.FirstName);
+		
+		if(user == null)
+		{
+			return false;
+		}
+		else if(user.EmployeeID.matches(username) && user.Password.matches(password))
 		{
 			return true;
 		}
-		
-		return false;
+		else
+		{
+			return false;
+		}
 	}
 	
 	public User RegisterUser(User user)

@@ -42,14 +42,19 @@ public class Registration
 	
 	public User GetUserByEmployeeID(String employeeID)
 	{
+		System.out.println("GetUserByEmployeeID: " + employeeID);
 		List<User> Users = new ArrayList<User>();
+		
+		Users = GetUserList();
 		
 		User GetUser = null;
 		
 		for(User user: Users)
 		{
-			if(user.EmployeeID == employeeID)
+			System.out.println("Registration: "+ user.EmployeeID);
+			if(user.EmployeeID.matches(employeeID))
 			{
+				System.out.println("Match");
 				 GetUser = user;
 				 break;
 			}

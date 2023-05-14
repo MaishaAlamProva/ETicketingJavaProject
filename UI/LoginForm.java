@@ -115,15 +115,28 @@ public class LoginForm extends JFrame implements KeyListener{
 		{
 			public void actionPerformed(ActionEvent ae)
 			{
+				System.out.println("UserName: " + usernameText.getText());
 				
-				if(usernameText.getText().equals("samia") && passwordText.getText().equals("1234"))
-			{
-				JOptionPane.showMessageDialog(null, "successfull","Message", JOptionPane.PLAIN_MESSAGE);
-			}
-			else
-			{
-				JOptionPane.showMessageDialog(null, "wrong","error", JOptionPane.ERROR_MESSAGE);
-			}
+				Boolean verfication = _services.Login(usernameText.getText().trim(), passwordText.getText());
+				
+				
+				
+				if(verfication == true)
+				{
+					JOptionPane.showMessageDialog(null, "successfull","Message", JOptionPane.PLAIN_MESSAGE);
+				}
+				else
+				{
+					JOptionPane.showMessageDialog(null, "wrong","error", JOptionPane.ERROR_MESSAGE);
+				}
+				// if(usernameText.getText().equals("samia") && passwordText.getText().equals("1234"))
+			// {
+				// JOptionPane.showMessageDialog(null, "successfull","Message", JOptionPane.PLAIN_MESSAGE);
+			// }
+			// else
+			// {
+				// JOptionPane.showMessageDialog(null, "wrong","error", JOptionPane.ERROR_MESSAGE);
+			// }
 			}
 		}
 		);
