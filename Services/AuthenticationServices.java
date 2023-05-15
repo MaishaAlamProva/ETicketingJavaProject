@@ -18,8 +18,6 @@ public class AuthenticationServices
 		System.out.println("Login Call");
 		User user = _registration.GetUserByEmployeeID(username);
 		
-		System.out.println(user.FirstName);
-		
 		if(user == null)
 		{
 			return false;
@@ -33,6 +31,22 @@ public class AuthenticationServices
 			return false;
 		}
 	}
+	
+	public boolean Register(User userRegistration)
+	{
+		System.out.println("Register Call");
+		User user = _registration.GetUserByEmployeeID(userRegistration.EmployeeID);
+		
+		if(user == null)
+		{
+			return _registration.RegisterUser(userRegistration);
+		}
+		else{
+			return false;
+		}
+		
+	}
+	
 	
 	public User RegisterUser(User user)
 	{

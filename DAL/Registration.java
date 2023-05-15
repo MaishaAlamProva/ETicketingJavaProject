@@ -110,7 +110,18 @@ public class Registration
 		{
 			Users = new ArrayList<User>();
 		}
+		
+	    var user = GetUserByEmployeeID(usr.EmployeeID);
+		
+		if(user == null)
+		{
 			Users.add(usr);
+		}
+		else
+		{
+			return false;
+		}
+		
 		
 			json = gson.toJson(Users);  // Object To Serialized (string).
 			System.out.println(json);

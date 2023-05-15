@@ -129,7 +129,7 @@ public class LoginForm extends JFrame implements KeyListener{
 				{
 					JOptionPane.showMessageDialog(null, "wrong","error", JOptionPane.ERROR_MESSAGE);
 				}
-				// if(usernameText.getText().equals("samia") && passwordText.getText().equals("1234"))
+				// if(usernameText.getText().equals("prova") && passwordText.getText().equals("1234"))
 			// {
 				// JOptionPane.showMessageDialog(null, "successfull","Message", JOptionPane.PLAIN_MESSAGE);
 			// }
@@ -167,7 +167,20 @@ public class LoginForm extends JFrame implements KeyListener{
          {
              System.out.println("Enter Pressed");
 			 
-			 JOptionPane.showMessageDialog(null,"Your login is succesfull");
+			 System.out.println("UserName: " + usernameText.getText());
+				
+				Boolean verfication = _services.Login(usernameText.getText().trim(), passwordText.getText());
+				
+				
+				
+				if(verfication == true)
+				{
+					JOptionPane.showMessageDialog(null, "successfull","Message", JOptionPane.PLAIN_MESSAGE);
+				}
+				else
+				{
+					JOptionPane.showMessageDialog(null, "wrong","error", JOptionPane.ERROR_MESSAGE);
+				}
 			
          }
     }    

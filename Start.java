@@ -14,6 +14,7 @@ public class Start
 		
 	     LoginForm fr =  new LoginForm();
 		 fr.setVisible(true);
+		 
 		
 		//Registration reg = new Registration();
 		// User usr = new User();

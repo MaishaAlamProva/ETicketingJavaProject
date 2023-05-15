@@ -16,11 +16,11 @@ public class RegistrationFrom extends JFrame implements KeyListener{
     private JPasswordField pf1;
     private JButton b1,b2;
 	private Font f1,f2;
-	private AuthenticationServices _service;
+	private AuthenticationServices _services;
 
     public RegistrationFrom()
 	{
-		_service = new AuthenticationServices();
+		_services = new AuthenticationServices();
 		
 		c = this.getContentPane();
 		c.setLayout(null);
@@ -143,9 +143,30 @@ public class RegistrationFrom extends JFrame implements KeyListener{
 		{
 			public void actionPerformed(ActionEvent ae)
 			{
+				System.out.println("Working");
 				
-				System.out.println("Enter");
-				JOptionPane.showMessageDialog(null, "Congratulations, Your account has been created!!");
+				User registrationUser = new User();
+				
+				registrationUser.FirstName = tf1.getText().trim();
+				registrationUser.LastName = tf2.getText().trim();
+				registrationUser.EmployeeID = tf3.getText().trim();
+				registrationUser.PhoneNo = tf4.getText().trim();
+				registrationUser.Password = pf1.getText().trim();
+				
+				//Boolean verfication = _services.Register(tf1.getText().trim(), tf2.getText().trim(),tf3.getText().trim(),tf4.getText().trim(),pf1.getText());
+				Boolean verfication = _services.Register(registrationUser);
+				
+				
+				if(verfication == true)
+				{
+					JOptionPane.showMessageDialog(null, "Successfull","Message", JOptionPane.PLAIN_MESSAGE);
+				}
+				else
+				{
+					JOptionPane.showMessageDialog(null, "Wrong","error", JOptionPane.ERROR_MESSAGE);
+				}
+				//System.out.println("Enter");
+				//JOptionPane.showMessageDialog(null, "Congratulations, Your account has been created!!");
 				
 		    }
 		}
