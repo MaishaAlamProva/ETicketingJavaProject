@@ -41,7 +41,7 @@ public class LoginForm extends JFrame implements KeyListener{
 		loginptxt.setBorder(BorderFactory.createMatteBorder(0,0,2,0,Color.ORANGE));
 		c.add(loginptxt);
 		
-        userlabel =new JLabel("User Name ");
+        userlabel =new JLabel("Employee Id ");
 		userlabel.setBounds(520,130,150,20);
 		userlabel.setFont(f);
 		userlabel.setForeground(Color.BLACK);

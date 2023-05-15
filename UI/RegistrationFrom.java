@@ -70,7 +70,7 @@ public class RegistrationFrom extends JFrame implements KeyListener{
 		tf2.setFont(f2);
 		c.add(tf2);
 		
-		l4 =new JLabel("User Name ");
+		l4 =new JLabel("Employee Id ");
 		l4.setBounds(380,200,200,30);
 		l4.setFont(f2);
 		l4.setForeground(Color.BLACK);
@@ -160,6 +160,10 @@ public class RegistrationFrom extends JFrame implements KeyListener{
 				if(verfication == true)
 				{
 					JOptionPane.showMessageDialog(null, "Successfull","Message", JOptionPane.PLAIN_MESSAGE);
+				}
+				else if(ae.getSource()== b2)
+				{
+					
 				}
 				else
 				{

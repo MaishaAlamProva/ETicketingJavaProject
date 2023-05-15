@@ -2,6 +2,7 @@ package Services;
 import DAL.*;
 import Model.*;
 import java.lang.*;
+import java.util.*;
 
 public class AuthenticationServices
 {
@@ -47,9 +48,12 @@ public class AuthenticationServices
 		
 	}
 	
-	
-	public User RegisterUser(User user)
+	public List<User> Users()
 	{
-		return user;
+		List<User> Users = new ArrayList<User>();
+		
+		Users = _registration.GetUserList();
+		
+		return Users;
 	}
 }
