@@ -18,12 +18,6 @@ Developed a Java-based system focusing on secure authentication and access contr
 
 This project serves as the entry point for an E-Ticketing management application. It initializes the system by launching the main login portal.
 
-========================================
-📋 PREREQUISITES
-========================================
-
-• Java Development Kit (JDK): Version 8 or higher  
-• IDE: Eclipse, IntelliJ IDEA, or NetBeans (recommended)
 
 ========================================
 🏗️ ARCHITECTURE
